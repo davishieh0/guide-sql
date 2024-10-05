@@ -1,7 +1,7 @@
 # Passo a passo: Mysql connector + Flask
 ## Siga os passos 0 a 3 para realizar o processo
 
-### 0. Instalar mysql connector
+### 0. Instalar mysql connector (terminal)
 
 ```bash
 pip install mysql-connector-python
@@ -10,7 +10,7 @@ pip install mysql-connector-python
 ### 1. Importe o mysql connector e estabeleça a conexão
 
 ```python
-ntoimport mysql.connector
+import mysql.connector
 
 mydb = mysql.connector.connect(
     host='127.0.0.1',
@@ -31,16 +31,6 @@ def visualizar_eventos():
 	cursor.execute('SELECT * FROM Eventos')
 	meus_eventos = cursor.fetchall() # adiciona a lista na var meus_eventos
 	
-	meus_eventos = list()
-	for evento in meus_eventos:
-		evento.append(
-			{
-				'id': carro[0],
-				'marca': carro[1],
-				'modelo': carro[2],
-				'ano': carro[3]
-			}
-			)
 return make_response(
 	jsonify(
 		mensagem='lista de eventos.',
@@ -49,7 +39,6 @@ return make_response(
 )
 
 ```
-
 ### 2. Inserções, atualizações e exclusões / INSERT
 
 ```python
@@ -70,4 +59,20 @@ Sempre que terminar de usar o banco de dados, é importante fechar a conexão e 
 ```python
 cursor.close()
 conexao.close()
+```
+
+
+### obs
+Fazer isso pra formatar os bgl
+```python
+	meus_eventos = list()
+	for evento in meus_eventos:
+		evento.append(
+			{
+				'id': carro[0],
+				'marca': carro[1],
+				'modelo': carro[2],
+				'ano': carro[3]
+			}
+			)
 ```

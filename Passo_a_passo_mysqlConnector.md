@@ -12,7 +12,7 @@ pip install mysql-connector-python
 ```python
 import mysql.connector
 
-mydb = mysql.connector.connect(
+conexao = mysql.connector.connect(
     host='127.0.0.1',
     user='root',
     password='Davi1712',
